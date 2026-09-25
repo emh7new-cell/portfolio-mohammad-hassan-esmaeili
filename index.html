@@ -38,17 +38,22 @@
     .sequence-copy p{margin:5px 0;color:var(--muted);font-size:14px}
     .sequence-copy strong{color:var(--ink)}
     .sequence-copy .reel-footer{margin-top:12px;justify-content:flex-start}
-    .logic-path{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:16px}
+    .logic-path{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:16px;direction:rtl}
     .logic-path span{padding:8px 12px;border:1px solid var(--line);border-radius:999px;background:var(--paper);font:700 13px "Yekan Bakh",sans-serif;color:var(--navy)}
-    .logic-path b{color:var(--accent);font-size:18px}
+    .logic-path b{color:var(--accent);font-size:18px;font-weight:400}
     .logic-map{display:grid;gap:10px;margin-top:16px}
     .logic-row{display:grid;grid-template-columns:100px 1fr;gap:12px;align-items:center}
     .logic-row strong{color:var(--navy);font-family:"Yekan Bakh",sans-serif}
     .logic-row span{color:var(--muted);font-size:13px}
     .muted-note{color:var(--muted);font-size:13px;margin:0}
+    .challenge-block{margin-top:18px;padding-top:14px;border-top:1px solid rgba(255,255,255,.16)}
+    .challenge-block>strong{display:block;color:#fff;font:700 15px "Yekan Bakh",sans-serif;margin-bottom:9px}
+    .challenge-list{display:flex;flex-wrap:wrap;gap:8px}
+    .challenge-list span{display:inline-flex;padding:6px 11px;border-radius:999px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.14);color:#f4f7f4;font-size:12px}
+    .challenge-list .challenge-number{background:#7cd6b0;color:#072768;border-color:#7cd6b0;font-weight:800}
     footer{padding:45px 0 70px;border-top:1px solid var(--line);margin-top:30px;color:var(--muted)}.contact{display:flex;gap:12px;flex-wrap:wrap}.contact a{background:var(--card);border:1px solid var(--line);padding:10px 14px;border-radius:12px;color:var(--navy)}
     @media(max-width:900px){.meta{grid-template-columns:1fr 1fr}.grid{grid-template-columns:repeat(2,1fr)}.case-box,.two,.timeline-intro{grid-template-columns:1fr}.hero h1{font-size:42px}.navlinks{display:none}.sequence-item{grid-template-columns:60px 150px 1fr;gap:12px}}
-    @media(max-width:650px){.sequence-item{grid-template-columns:52px 1fr;gap:12px}.sequence-index{width:48px;height:48px;font-size:16px}.sequence-cover{grid-column:2;grid-row:1}.sequence-copy{grid-column:2}.sequence-copy h3{font-size:19px}.sequence:before{right:23px}.logic-row{grid-template-columns:88px 1fr}}
+    @media(max-width:650px){.sequence-item{grid-template-columns:52px 1fr;gap:12px}.sequence-index{width:48px;height:48px;font-size:16px}.sequence-cover{grid-column:2;grid-row:1}.sequence-copy{grid-column:2}.sequence-copy h3{font-size:19px}.sequence:before{right:23px}.logic-row{grid-template-columns:88px 1fr}.logic-path{flex-wrap:nowrap;overflow-x:auto;padding-bottom:8px}.logic-path span{white-space:nowrap}}
     @media(max-width:560px){.wrap{padding:0 16px}.meta{grid-template-columns:1fr}.grid{grid-template-columns:1fr 1fr;gap:9px}.hero{padding-top:46px}.hero h1{font-size:34px}.hero p{font-size:17px}.reel-body{padding:10px}.reel-body h4{font-size:14px}.nav{height:56px}}
   </style>
 </head>
@@ -84,7 +89,6 @@
         <p>خداروشکر فرصت همکاری با برندهای مختلف توی کتگوری‌های مختلف و داشتم؛ از شرکت ساختمونی و مجتمع تفریحی و رستوران گرفته تا شرکت‌های خدماتی، طلافروشی و...</p>
         <p>همین تنوع مشتری‌ها باعث شده با پرسوناها، لحن‌ها و مسئله‌های متفاوتی روبه‌رو بشم و از کار کردن با یه فرمول ثابت فاصله بگیرم.</p>
         <div class="two" style="margin-top:18px">
-          <div><h3>نهادهای رسمی</h3><p>اداره برق نیشابور<br>ستاد بنیاد شهید نیشابور<br>اداره تبلیغات اسلامی</p></div>
           <div><h3>ساختمان و معماری</h3><p>کیاکو<br>گروه ساختمانی بهشت<br>هلدینگ ستاره سپهر<br>شوروم‌های بارمان</p></div>
           <div><h3>تجاری و سلامت</h3><p>فروشگاه طلا و جواهر — طلا و زمان<br>کلینیک دندانپزشکی دکتر زرین<br>کلینیک زیبایی روشا</p></div>
           <div><h3>خدماتی و تفریحی</h3><p>مجموعه سوارکاری و پرورش اسب گلدن هورس<br>مجموعه خدمات خودرو مولوی<br>مجتمع مهدوی مال<br>رستوران سنتی تاج‌محل</p></div>
@@ -99,7 +103,6 @@
         <div><b>نقش</b><span>استراتژی محتوا و سناریونویسی</span></div>
         <div><b>حوزه</b><span>تراکتور و ماشین‌آلات کشاورزی</span></div>
         <div><b>بستر</b><span>اینستاگرام</span></div>
-        <div><b>مدت</b><span>در طول یک دوره کاری</span></div>
       </div>
     </section>
 
@@ -107,9 +110,10 @@
       <div class="case-box">
         <div>
           <div class="kicker" style="color:#7cd6b0">مسئله</div>
-          <h3>پیج عوض نشده بود، اما کسب‌وکار عوض شده بود.</h3>
+          <h3>کسب‌وکار رشد کرده بود، اما پیج و برند هنوز باهاش به‌روز نشده بودن.</h3>
+          <p>آقای همت‌آبادی کسب‌وکارش رو تقویت کرده بود، ولی غفلت از تولید محتوای مناسب باعث شده بود بین چیزی که واقعاً هست و چیزی که مخاطب می‌بینه فاصله ایجاد بشه.</p>
           <p>وقتی وارد پروژه شدم، پیج بیشتر شبیه یک فروشگاه قطعات تراکتور بود؛ در حالی که مجموعه وارد مرحله واردات و مونتاژ تراکتور آیرون شده بود. شکاف اصلی فقط کمبود محتوا نبود؛ تصویری که مخاطب از مجموعه داشت با چیزی که واقعاً بود فاصله داشت.</p>
-          <div style="margin-top:14px"><span class="pill">حدود ۷–۸ هزار دنبال‌کننده</span><span class="pill">محتوای پراکنده</span><span class="pill">تصویر فروشگاهی</span><span class="pill">نیاز به اعتماد</span></div>
+          <div class="challenge-block"><strong>چالش‌های پروژه</strong><div class="challenge-list"><span class="challenge-number">۷–۸ هزار دنبال‌کننده</span><span>محتوای پراکنده</span><span>تصویر فروشگاهی</span><span>نیاز به اعتماد</span><span>نیاز به اطلاع‌رسانی</span></div></div>
         </div>
         <div>
           <div class="kicker" style="color:#7cd6b0">هدف</div>
@@ -135,7 +139,7 @@
         <p>برای شروع، یک نمای کلی از سوله گذاشتم با هوک «برای اولین بار در نیشابور — فیروزه». بعد کم‌کم راه‌اندازی خط مونتاژ آیرون، تصاویر کارشناسان، بخشی از تراکتور و فضای پروژه رو مرحله‌به‌مرحله نشون دادم.</p>
         <p>نمی‌خواستم از همون اول همه‌چیز رو لو بدیم؛ مخاطب باید می‌موند تا کم‌کم بفهمه این «اولین» دقیقاً مربوط به چیه.</p>
         <p><strong>هدف:</strong> دادن اولین پالس به مخاطب که یه اتفاق بزرگ در راهه و ایجاد تصویری از تغییر مقیاس کسب‌وکار.</p>
-        <h3>بعد از جلب توجه، نوبت ساختن شناخت بود</h3>
+        <h3>بعد از جلب توجه، نوبت ساختن آگاهی از برند بود</h3>
         <p>بعد از اینکه مخاطب متوجه شد اتفاق جدیدی در مجموعه افتاده، باید می‌فهمید آیرون چیه و چرا باید اخبارش رو دنبال کنه. با «یک تحول بزرگ در نیشابور» دوباره توجه گرفتیم و بعد سراغ محتواهایی مثل «معجزات آیرون»، «غول تراکتور ایران» و «صدای نرم تراکتور» رفتیم.</p>
         <h3>فقط معرفی محصول کافی نبود</h3>
         <p>بعد از معرفی آیرون، سؤال‌های مهم‌تری برای مخاطب شکل می‌گرفت: اعتماد، خدمات پس از فروش، تأمین قطعات، انتخاب مدل مناسب و دلیل خرید.</p>
@@ -151,7 +155,7 @@
         <h3>نتیجه</h3>
         <p>در دوره‌ای که من روی استراتژی و محتوای پیج کار می‌کردم، تعداد فالوورها از حدود <strong>۷–۸ هزار نفر به حدود ۲۰ هزار نفر</strong> رسید. در مقاطعی با حدود ۱۳ هزار فالوور، استوری‌ها تا حدود ۸ هزار بازدید می‌گرفتن و چندین محتوا هم به بازدیدهای ده‌ها و صدها هزار نفری رسیدن.</p>
         <p>از طریق دعوت‌های مختلف، مخاطب برای دریافت اطلاعات و مشاوره جذب شد و چند هزار شماره تماس معتبر هم در فرآیند جمع‌آوری اطلاعات ثبت شد.</p>
-        <p>مخاطبی که در این مدت جذب شد، تا حد زیادی از جامعه هدف واقعی حوزه تراکتور بود و پیج‌های معتبر این حوزه هم شروع به تعامل با صفحه کردند.</p>
+        <p>مخاطبی که در این بازه جذب شد، تا حد زیادی از جامعه هدف واقعی حوزه تراکتور بود و پیج‌های معتبر این حوزه هم شروع به تعامل با صفحه کردند.</p>
         <p>همکاری ما بعد از جنگ ۱۲ روزه تموم شد و من تا انتهای مسیر پروژه حضور نداشتم؛ بنابراین نتایج نهایی کسب‌وکار رو به این دوره نسبت نمی‌دم.</p>
         <h3>نقش من در پروژه</h3>
         <p>استراتژی محتوا، تحقیق و بررسی، سناریونویسی، کپشن‌نویسی، تنظیم ترتیب محتوا، پاسخ‌گویی و ارتباط با مخاطب و بخشی از تدوین.</p>
@@ -162,19 +166,19 @@
       <div class="section-head"><div><h2>ترتیب واقعی محتوا</h2><p class="section-intro">این‌ها مجموعه‌ای از ریلزهای مستقل نیستند؛ هر محتوا بخشی از مسیر شناخت، اعتماد، بررسی و اقدام مخاطب را کامل می‌کند.</p></div></div>
       <div class="timeline-intro">
         <div class="panel">
-          <h3>از توجه تا اقدام</h3>
+          <h3>از جذب ترافیک تا تبدیل به لید نیچ</h3>
           <p>ترتیب نمایش مطابق ترتیب انتشار داده‌های پروژه است، نه میزان بازدید. ارزش این Case Study در مسیری است که محتواها کنار هم ساخته‌اند.</p>
-          <div class="logic-path"><span>توجه</span><b>↓</b><span>شناخت</span><b>↓</b><span>اعتماد</span><b>↓</b><span>بررسی</span><b>↓</b><span>رفع تردید</span><b>↓</b><span>مشاوره</span><b>↓</b><span>لید</span></div>
+          <div class="logic-path"><span>جذب ترافیک</span><b>←</b><span>آگاهی برند</span><b>←</b><span>اعتماد</span><b>←</b><span>بررسی</span><b>←</b><span>رفع تردید مخاطب</span><b>←</b><span>مشاوره</span><b>←</b><span>لید</span></div>
           <p class="muted-note" style="margin-top:14px">این یک منطق طراحی مسیر محتواست، نه قیف آماری قطعی؛ هر مخاطب الزاماً همهٔ این مراحل را طی نمی‌کند.</p>
         </div>
         <div class="panel">
           <h3>منطق هر گروه محتوا</h3>
           <div class="logic-map">
             <div class="logic-row"><strong>جلب توجه</strong><span>Hook، اتفاق بزرگ و معرفی تغییر</span></div>
-            <div class="logic-row"><strong>شناخت</strong><span>معرفی آیرون و معرفی برند</span></div>
+            <div class="logic-row"><strong>آگاهی از برند</strong><span>معرفی آیرون و معرفی برند</span></div>
             <div class="logic-row"><strong>اعتماد</strong><span>سابقه، خدمات و اعتبار برند</span></div>
             <div class="logic-row"><strong>بررسی</strong><span>مزایا، ویژگی‌ها و مدل‌ها</span></div>
-            <div class="logic-row"><strong>رفع تردید</strong><span>قطعات، تست واقعی و عملکرد</span></div>
+            <div class="logic-row"><strong>رفع تردید مخاطب</strong><span>قطعات، تست واقعی و عملکرد</span></div>
             <div class="logic-row"><strong>اقدام</strong><span>مشاوره، دریافت اطلاعات و درخواست اطلاعات</span></div>
           </div>
         </div>
@@ -182,12 +186,12 @@
       <div class="sequence">
         <article class="sequence-item"><div class="sequence-index">۰۱</div><a class="sequence-cover" href="https://www.instagram.com/hematabadi_tractor/reel/DMIxTV4tghC/" target="_blank" rel="noreferrer"><img src="assets/hematabadi/01-DMIxTV4tghC.png" alt="کارخانه مونتاژ تراکتور ایرون"></a><div class="sequence-copy"><span class="stage">جلب توجه</span><h3>کارخانه مونتاژ تراکتور ایرون</h3><p><strong>هدف:</strong> معرفی یک تغییر بزرگ و ایجاد کنجکاوی درباره اتفاقی که در راه است.</p><p><strong>نتیجه واقعی:</strong> ♥ ۸.۱K پسند · 💬 ۵۵۸ دیدگاه</p><div class="reel-footer"><span class="view">انتشار: ۲۰۲۵-۰۷-۱۵</span><a class="btn" href="https://www.instagram.com/hematabadi_tractor/reel/DMIxTV4tghC/" target="_blank" rel="noreferrer">مشاهده در اینستاگرام</a></div></div></article>
         <article class="sequence-item"><div class="sequence-index">۰۲</div><a class="sequence-cover" href="https://www.instagram.com/hematabadi_tractor/reel/DNPrXoiuQpA/" target="_blank" rel="noreferrer"><img src="assets/hematabadi/06-DNPrXoiuQpA.png" alt="نیشابور در آستانه یک تحول بزرگ"></a><div class="sequence-copy"><span class="stage">جلب توجه</span><h3>نیشابور در آستانه یک تحول بزرگ</h3><p><strong>هدف:</strong> ادامه دادن توجه و نگه داشتن مخاطب در روایت تغییر مقیاس کسب‌وکار.</p><p><strong>نتیجه واقعی:</strong> ♥ ۷K پسند · 💬 ۴۷۰ دیدگاه</p><div class="reel-footer"><span class="view">انتشار: ۲۰۲۵-۰۸-۱۲</span><a class="btn" href="https://www.instagram.com/hematabadi_tractor/reel/DNPrXoiuQpA/" target="_blank" rel="noreferrer">مشاهده در اینستاگرام</a></div></div></article>
-        <article class="sequence-item"><div class="sequence-index">۰۳</div><a class="sequence-cover" href="https://www.instagram.com/hematabadi_tractor/reel/DNd8cgWySUD/" target="_blank" rel="noreferrer"><img src="assets/hematabadi/07-DNd8cgWySUD.png" alt="تراکتور آیرون"></a><div class="sequence-copy"><span class="stage">شناخت</span><h3>تراکتور آیرون</h3><p><strong>سؤال مخاطب:</strong> آیرون چیست و چرا باید ادامهٔ اخبارش را دنبال کنم؟</p><p><strong>نتیجه واقعی:</strong> ♥ ۵۲۴ پسند · 💬 ۳۹ دیدگاه</p><div class="reel-footer"><span class="view">انتشار: ۲۰۲۵-۰۸-۱۷</span><a class="btn" href="https://www.instagram.com/hematabadi_tractor/reel/DNd8cgWySUD/" target="_blank" rel="noreferrer">مشاهده در اینستاگرام</a></div></div></article>
-        <article class="sequence-item"><div class="sequence-index">۰۴</div><a class="sequence-cover" href="https://www.instagram.com/hematabadi_tractor/reel/DNtWIoCZFX_/" target="_blank" rel="noreferrer"><img src="assets/hematabadi/08-DNtWIoCZFX_.png" alt="سوالات پرتکرار تراکتور آیرون"></a><div class="sequence-copy"><span class="stage">رفع تردید</span><h3>سوالات پرتکرار تراکتور آیرون</h3><p><strong>هدف:</strong> پاسخ دادن به پرسش‌های مهمی که پیش از خرید شکل می‌گیرند.</p><p><strong>نتیجه واقعی:</strong> ♥ ۱.۱K پسند · 💬 ۳۲۳۲ دیدگاه</p><div class="reel-footer"><span class="view">انتشار: ۲۰۲۵-۰۸-۲۳</span><a class="btn" href="https://www.instagram.com/hematabadi_tractor/reel/DNtWIoCZFX_/" target="_blank" rel="noreferrer">مشاهده در اینستاگرام</a></div></div></article>
+        <article class="sequence-item"><div class="sequence-index">۰۳</div><a class="sequence-cover" href="https://www.instagram.com/hematabadi_tractor/reel/DNd8cgWySUD/" target="_blank" rel="noreferrer"><img src="assets/hematabadi/07-DNd8cgWySUD.png" alt="تراکتور آیرون"></a><div class="sequence-copy"><span class="stage">آگاهی از برند</span><h3>تراکتور آیرون</h3><p><strong>سؤال مخاطب:</strong> آیرون چیست و چرا باید ادامهٔ اخبارش را دنبال کنم؟</p><p><strong>نتیجه واقعی:</strong> ♥ ۵۲۴ پسند · 💬 ۳۹ دیدگاه</p><div class="reel-footer"><span class="view">انتشار: ۲۰۲۵-۰۸-۱۷</span><a class="btn" href="https://www.instagram.com/hematabadi_tractor/reel/DNd8cgWySUD/" target="_blank" rel="noreferrer">مشاهده در اینستاگرام</a></div></div></article>
+        <article class="sequence-item"><div class="sequence-index">۰۴</div><a class="sequence-cover" href="https://www.instagram.com/hematabadi_tractor/reel/DNtWIoCZFX_/" target="_blank" rel="noreferrer"><img src="assets/hematabadi/08-DNtWIoCZFX_.png" alt="سوالات پرتکرار تراکتور آیرون"></a><div class="sequence-copy"><span class="stage">رفع تردید مخاطب</span><h3>سوالات پرتکرار تراکتور آیرون</h3><p><strong>هدف:</strong> پاسخ دادن به پرسش‌های مهمی که پیش از خرید شکل می‌گیرند.</p><p><strong>نتیجه واقعی:</strong> ♥ ۱.۱K پسند · 💬 ۳۲۳۲ دیدگاه</p><div class="reel-footer"><span class="view">انتشار: ۲۰۲۵-۰۸-۲۳</span><a class="btn" href="https://www.instagram.com/hematabadi_tractor/reel/DNtWIoCZFX_/" target="_blank" rel="noreferrer">مشاهده در اینستاگرام</a></div></div></article>
         <article class="sequence-item"><div class="sequence-index">۰۵</div><a class="sequence-cover" href="https://www.instagram.com/hematabadi_tractor/reel/DN0e5ed4vpM/" target="_blank" rel="noreferrer"><img src="assets/hematabadi/09-DN0e5ed4vpM.png" alt="چرا آیرون بخریم؟"></a><div class="sequence-copy"><span class="stage">بررسی</span><h3>چرا آیرون بخریم؟</h3><p><strong>هدف:</strong> وارد کردن مخاطب به مقایسهٔ مزایا و دلیل انتخاب محصول.</p><p><strong>نتیجه واقعی:</strong> ♥ ۶.۶K پسند · 💬 ۱۶۹۳ دیدگاه</p><div class="reel-footer"><span class="view">انتشار: ۲۰۲۵-۰۸-۲۶</span><a class="btn" href="https://www.instagram.com/hematabadi_tractor/reel/DN0e5ed4vpM/" target="_blank" rel="noreferrer">مشاهده در اینستاگرام</a></div></div></article>
-        <article class="sequence-item"><div class="sequence-index">۰۶</div><a class="sequence-cover" href="https://www.instagram.com/hematabadi_tractor/reel/DOBzk-pD_EC/" target="_blank" rel="noreferrer"><img src="assets/hematabadi/10-DOBzk-pD_EC.png" alt="غول تراکتور ایران"></a><div class="sequence-copy"><span class="stage">شناخت</span><h3>غول تراکتور ایران</h3><p><strong>هدف:</strong> ساختن تصویر قوی‌تر و متمایزتر از محصول.</p><p><strong>نتیجه واقعی:</strong> ♥ ۸۲۹ پسند · 💬 ۲۷۸ دیدگاه</p><div class="reel-footer"><span class="view">انتشار: ۲۰۲۵-۰۸-۳۱</span><a class="btn" href="https://www.instagram.com/hematabadi_tractor/reel/DOBzk-pD_EC/" target="_blank" rel="noreferrer">مشاهده در اینستاگرام</a></div></div></article>
+        <article class="sequence-item"><div class="sequence-index">۰۶</div><a class="sequence-cover" href="https://www.instagram.com/hematabadi_tractor/reel/DOBzk-pD_EC/" target="_blank" rel="noreferrer"><img src="assets/hematabadi/10-DOBzk-pD_EC.png" alt="غول تراکتور ایران"></a><div class="sequence-copy"><span class="stage">آگاهی از برند</span><h3>غول تراکتور ایران</h3><p><strong>هدف:</strong> ساختن تصویر قوی‌تر و متمایزتر از محصول.</p><p><strong>نتیجه واقعی:</strong> ♥ ۸۲۹ پسند · 💬 ۲۷۸ دیدگاه</p><div class="reel-footer"><span class="view">انتشار: ۲۰۲۵-۰۸-۳۱</span><a class="btn" href="https://www.instagram.com/hematabadi_tractor/reel/DOBzk-pD_EC/" target="_blank" rel="noreferrer">مشاهده در اینستاگرام</a></div></div></article>
         <article class="sequence-item"><div class="sequence-index">۰۷</div><a class="sequence-cover" href="https://www.instagram.com/hematabadi_tractor/reel/DOMNIS6kgHe/" target="_blank" rel="noreferrer"><img src="assets/hematabadi/11-DOMNIS6kgHe.png" alt="صدای موتور"></a><div class="sequence-copy"><span class="stage">بررسی</span><h3>صدای موتور</h3><p><strong>هدف:</strong> نشان دادن ویژگی‌ای ملموس برای مخاطب و خریدار.</p><p><strong>نتیجه واقعی:</strong> ♥ ۹۶۱ پسند · 💬 ۱۵۱ دیدگاه</p><div class="reel-footer"><span class="view">انتشار: ۲۰۲۵-۰۹-۰۴</span><a class="btn" href="https://www.instagram.com/hematabadi_tractor/reel/DOMNIS6kgHe/" target="_blank" rel="noreferrer">مشاهده در اینستاگرام</a></div></div></article>
-        <article class="sequence-item"><div class="sequence-index">۰۸</div><a class="sequence-cover" href="https://www.instagram.com/hematabadi_tractor/reel/DOZEWsDkkAU/" target="_blank" rel="noreferrer"><img src="assets/hematabadi/12-DOZEWsDkkAU.png" alt="می‌خوای تراکتور بخری"></a><div class="sequence-copy"><span class="stage">رفع تردید</span><h3>می‌خوای تراکتور بخری</h3><p><strong>هدف:</strong> نزدیک کردن مخاطب به سؤال‌های قبل از خرید و انتخاب مدل مناسب.</p><p><strong>نتیجه واقعی:</strong> ♥ ۱.۱K پسند · 💬 ۱۶۹ دیدگاه</p><div class="reel-footer"><span class="view">انتشار: ۲۰۲۵-۰۹-۰۹</span><a class="btn" href="https://www.instagram.com/hematabadi_tractor/reel/DOZEWsDkkAU/" target="_blank" rel="noreferrer">مشاهده در اینستاگرام</a></div></div></article>
+        <article class="sequence-item"><div class="sequence-index">۰۸</div><a class="sequence-cover" href="https://www.instagram.com/hematabadi_tractor/reel/DOZEWsDkkAU/" target="_blank" rel="noreferrer"><img src="assets/hematabadi/12-DOZEWsDkkAU.png" alt="می‌خوای تراکتور بخری"></a><div class="sequence-copy"><span class="stage">رفع تردید مخاطب</span><h3>می‌خوای تراکتور بخری</h3><p><strong>هدف:</strong> نزدیک کردن مخاطب به سؤال‌های قبل از خرید و انتخاب مدل مناسب.</p><p><strong>نتیجه واقعی:</strong> ♥ ۱.۱K پسند · 💬 ۱۶۹ دیدگاه</p><div class="reel-footer"><span class="view">انتشار: ۲۰۲۵-۰۹-۰۹</span><a class="btn" href="https://www.instagram.com/hematabadi_tractor/reel/DOZEWsDkkAU/" target="_blank" rel="noreferrer">مشاهده در اینستاگرام</a></div></div></article>
         <article class="sequence-item"><div class="sequence-index">۰۹</div><a class="sequence-cover" href="https://www.instagram.com/hematabadi_tractor/reel/DO6k7LPjlPO/" target="_blank" rel="noreferrer"><img src="assets/hematabadi/13-DO6k7LPjlPO.png" alt="تراکتوری که معمولی نیست"></a><div class="sequence-copy"><span class="stage">بررسی</span><h3>تراکتوری که معمولی نیست</h3><p><strong>هدف:</strong> برجسته کردن تفاوت‌ها و ادامه دادن بررسی ویژگی‌های محصول.</p><p><strong>نتیجه واقعی:</strong> ♥ ۲.۳K پسند · 💬 ۲۰۰۳ دیدگاه</p><div class="reel-footer"><span class="view">انتشار: ۲۰۲۵-۰۹-۲۲</span><a class="btn" href="https://www.instagram.com/hematabadi_tractor/reel/DO6k7LPjlPO/" target="_blank" rel="noreferrer">مشاهده در اینستاگرام</a></div></div></article>
         <article class="sequence-item"><div class="sequence-index">۱۰</div><a class="sequence-cover" href="https://www.instagram.com/hematabadi_tractor/reel/DPHXFFgDt7p/" target="_blank" rel="noreferrer"><img src="assets/hematabadi/14-DPHXFFgDt7p.png" alt="موقع خرید تراکتور باید بدونی"></a><div class="sequence-copy"><span class="stage">بررسی</span><h3>موقع خرید تراکتور باید بدونی</h3><p><strong>هدف:</strong> پاسخ دادن به نکات مهم و دغدغه‌های تصمیم خرید.</p><p><strong>نتیجه واقعی:</strong> ♥ ۷۱۷ پسند · 💬 ۱۵۰ دیدگاه</p><div class="reel-footer"><span class="view">انتشار: ۲۰۲۵-۰۹-۲۷</span><a class="btn" href="https://www.instagram.com/hematabadi_tractor/reel/DPHXFFgDt7p/" target="_blank" rel="noreferrer">مشاهده در اینستاگرام</a></div></div></article>
         <article class="sequence-item"><div class="sequence-index">۱۱</div><a class="sequence-cover" href="https://www.instagram.com/hematabadi_tractor/reel/DPcC7tYju1f/" target="_blank" rel="noreferrer"><img src="assets/hematabadi/15-DPcC7tYju1f.png" alt="خدمات پس از فروش و قطعات"></a><div class="sequence-copy"><span class="stage">اعتماد</span><h3>خدمات پس از فروش و قطعات</h3><p><strong>هدف:</strong> پاسخ به نگرانی تأمین قطعات و خدمات پس از خرید.</p><p><strong>نتیجه واقعی:</strong> ♥ ۵۱۳ پسند · 💬 ۴۴ دیدگاه</p><div class="reel-footer"><span class="view">انتشار: ۲۰۲۵-۱۰-۰۵</span><a class="btn" href="https://www.instagram.com/hematabadi_tractor/reel/DPcC7tYju1f/" target="_blank" rel="noreferrer">مشاهده در اینستاگرام</a></div></div></article>
@@ -203,7 +207,7 @@
 
     <section class="section wrap" id="selected">
       <div class="two">
-        <div class="panel"><h3></h3><div class="metric"><div><strong>۷–۸K → ۲۰K</strong><span>رشد دنبال‌کننده در دوره فعالیت</span></div><div><strong>۸K</strong><span>بازدید استوری در مقطعی با حدود ۱۳K دنبال‌کننده</span></div><div><strong>۱۰۰K+</strong><span>چندین محتوای بالای صد هزار بازدید</span></div><div><strong>چند هزار</strong><span>شماره تماس معتبر جمع‌آوری‌شده</span></div></div></div>
+        <div class="panel"><h3>بازخورد</h3><div class="metric"><div><strong>۷–۸K → ۲۰K</strong><span>رشد دنبال‌کننده در دوره فعالیت</span></div><div><strong>۸K</strong><span>بازدید استوری در مقطعی با حدود ۱۳K دنبال‌کننده</span></div><div><strong>۱۰۰K+</strong><span>چندین محتوای بالای صد هزار بازدید</span></div><div><strong>چند هزار</strong><span>شماره تماس معتبر جمع‌آوری‌شده</span></div></div></div>
         <div class="panel"><h3>نقش من در پروژه</h3><p style="color:var(--muted)">استراتژی محتوا، تحقیق و بررسی، سناریونویسی، کپشن‌نویسی، تنظیم ترتیب محتوا، پاسخ‌گویی و ارتباط با مخاطب و بخشی از تدوین.</p></div>
       </div>
     </section>
@@ -218,7 +222,7 @@
       <div class="panel">
         <h2>درباره من</h2>
         <p>من یه جوون علاقه‌مند به ادبیات و هنرم که بعد از دیدن یه دوره تدوین، با معرفی اقوامم به یه کارگردان نیشابوری که کارهای دغدغه‌مند تولید می‌کرد، وارد عرصه تدوین شدم.</p>
-        <p>یه مدت بعد با تیم فلیک آشنا شدم و وارد فضای تولید محتوای تبلیغاتی شدم.</p>
+        <p>بعدتر با تیم فلیک آشنا شدم و وارد فضای تولید محتوای تبلیغاتی شدم.</p>
         <h3>چرا سناریونویسی؟</h3>
         <p>علاقه به ادبیات از قبل توی من بود، ولی تا قبل از ورود به تبلیغات، ارتباط مستقیمی با این حوزه نداشتم. وقتی وارد تیم فلیک شدم، به واسطه ارتباط با بخش‌های مختلف، کم‌کم متوجه شدم بیشتر از چیزی که فکر می‌کردم با ایده‌پردازی و نوشتن ارتباط دارم.</p>
         <p>از طرفی خودم هم دوست داشتم بنویسم، برای همین سراغ دوره‌های سناریونویسی، برندینگ و دیجیتال مارکتینگ رفتم. هرچی بیشتر وارد این فضا شدم، بیشتر از عمیق شدن توی این بازی لذت بردم. زمین بازی‌ای که در اختیارم گذاشته شد هم باعث شد کلی آزمون و خطا کنم و تجربه‌های مختلفی به دست بیارم.</p>
@@ -228,7 +232,7 @@
         <h3>امروز دنبال چی هستم؟</h3>
         <p>می‌خوام از دانش و تجربه‌ای که توی این مسیر به دست آوردم، برای ارضای جاه‌طلبی‌هام در چارچوب ارزش‌هام استفاده کنم.</p>
         <p>برای همین، پروژه‌هایی که پتانسیل رشد و انگیزه جاه‌طلبانه دارن، مخصوصاً پروژه‌هایی که مدل همکاری‌شون می‌تونه به نتیجه واقعی کار گره بخوره، برام جذاب‌ترن.</p>
-        <p>در کنار اون، استودیوها و تیم‌هایی که دنبال کار اصولی هستن و می‌خوان برای محتواشون اهداف بلندمدت داشته باشن، جزو اولویت‌های من برای همکاری هستن.</p>
+        <p>در کنار اون، استودیوها و تیم‌هایی که دنبال کار اصولی هستن و می‌خوان برای محتواشون اهداف پایدار داشته باشن، جزو اولویت‌های من برای همکاری هستن.</p>
       </div>
     </section>
   </main>
